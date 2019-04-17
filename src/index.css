@@ -24,6 +24,9 @@ button {
 ul {
   list-style-type: none;
   padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   }
 
   li{
