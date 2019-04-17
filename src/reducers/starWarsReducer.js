@@ -11,6 +11,8 @@ const initialState = {
   // Array characters, Boolean fetching, null error.
   isFetching: false,
   error: null,
+  next: null,
+  previous: null,
 };
 export const charsReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -21,19 +23,22 @@ export const charsReducer = (state = initialState, action) => {
       return {
         ...state,
         isFetching: true,
-        error: null,
       }
     case FETCH_PEOPLE_SUCCESS:
       return {
-        ...state,
+        ...state, 
+        characters: action.payload.results,
+        next: action.payload.next,
+        previous: action.payload.previous,
         isFetching: false,
-        characters: [...state.characters, ...action.payload]
+        error: null
       }
     case FETCH_PEOPLE_FAILURE:
       return {
         ...state,
         fetching: false,
-        error: action.payload,
+        error: action.error,
+
       }
     default:
       return state;

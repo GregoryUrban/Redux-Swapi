@@ -15,7 +15,7 @@ import "./index.css";
 // logger from redux-logger  DONE below
 // rootReducer from ./reducers - already DONE?
 
-const store = createStore(rootReducer, applyMiddleware(thunk, logger));
+const store = createStore(rootReducer, applyMiddleware(logger,thunk));
 ReactDOM.render(
   <Provider store={store}>
     <App />
