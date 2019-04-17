@@ -38,9 +38,16 @@ class CharacterListView extends React.Component {
     }
     return (
       <div className="CharactersList_wrapper">
+      <div className="btn-section">
         <button onClick={this.fetchPrevious}>Next</button>
-        <CharacterList characters={this.props.characters} />
         <button onClick={this.fetchNext}>Previous</button>
+      </div>
+
+        <CharacterList characters={this.props.characters} />
+        <div className="btn-section">
+          <button onClick={this.fetchPrevious}>Next</button>
+          <button onClick={this.fetchNext}>Previous</button>
+      </div>
       </div>
     );
   }

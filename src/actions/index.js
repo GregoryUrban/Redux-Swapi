@@ -21,27 +21,14 @@ export const getPeople = (
 };
 
 
-// export const getPeople = () => dispatch => {    // dispatch a "start" action
-//     console.log("In getPeople Action before .get")
-//     dispatch({ type: FETCH_PEOPLE_START })    // then... start the API call
-//     axios
-//       .get(
-//         `https://swapi.co/api/people/`
-//       )
-//       .then(res => {
-//         console.log(res.data.results)
-//         dispatch({
-//           type: FETCH_PEOPLE_SUCCESS,
-//           payload: res.data
-//         })
-//       })
-//       .catch(err => {
-//         dispatch({
-//           type: FETCH_PEOPLE_FAILURE,
-//           payload: err
-//         })
-//       })
-//   }
+// export const getSpecies = (
+//   target = "https://swapi.co/api/species/"
+// ) => dispatch => {
+//   dispatch({ type: FETCH_SPECIES_START });
+//   axios(target)
+//     .then(res => dispatch({ type: FETCH_SPECIES_SUCCESS, payload: res.data }))
+//     .catch(error => dispatch({ type: FETCH_SPECIES_FAILURE, error }));
+// };
 
   // ACTIONS
   
