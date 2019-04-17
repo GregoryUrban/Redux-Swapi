@@ -41,8 +41,6 @@ class CharacterListView extends React.Component {
         <button onClick={this.fetchPrevious}>Next</button>
         <CharacterList characters={this.props.characters} />
         <button onClick={this.fetchNext}>Previous</button>
-      "Its Fetching Bro!"
-
       </div>
     );
   }
