@@ -6,7 +6,7 @@ const Character = props => {
   <p>Gender: {props.character.gender}</p> 
   <p>dob: {props.character.birth_year}</p>
   <p>Height: {props.character.height}</p>
-  <p>Homeworld: {props.character.homeworld}</p>
+  {/* <p>Species: {props.species.name}</p> */}
   </div>;
 };
 

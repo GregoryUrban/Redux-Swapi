@@ -4,6 +4,10 @@ export const FETCH_PEOPLE_START = "FETCH_PEOPLE_START"
 export const FETCH_PEOPLE_SUCCESS = "FETCH_PEOPLE_SUCCESS"
 export const FETCH_PEOPLE_FAILURE = "FETCH_PEOPLE_FAILURE"
 
+// export const FETCH_SPECIES_START = "FETCH_SPECIES_START"
+// export const FETCH_SPECIES_SUCCESS = "FETCH_SPECIES_SUCCESS"
+// export const FETCH_SPECIES_FAILURE = "FETCH_SPECIES_FAILURE"
+
 // we'll need to create 3 different action types here. -DONE
 // one for fetching, one for success and one for failure -DONE
 

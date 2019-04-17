@@ -4,6 +4,8 @@ import { connect } from "react-redux";
 import { CharacterList } from "../components";
 // import actions
 import { getPeople } from "../actions";
+// import { getSpecies } from "../actions";
+
 
 
 class CharacterListView extends React.Component {
@@ -14,6 +16,7 @@ class CharacterListView extends React.Component {
   componentDidMount() {
     // call our action
     this.props.getPeople()
+    // this.props.getSpecies()
   }
 
   fetchNext = () => {
@@ -63,12 +66,15 @@ const mapStateToProps = state => {
     next: state.charsReducer.next,
     previous: state.charsReducer.previous,
     fetching: state.charsReducer.fetching,
-    error: state.charsReducer.error
+    error: state.charsReducer.error,
+    // species: state.speciesReducer.name
+
   }
 }
 
 
 export default connect(
   mapStateToProps,
-  {getPeople}
+  {getPeople},
+  // {getSpecies}
 )(CharacterListView);
