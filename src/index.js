@@ -1,19 +1,33 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
-import App from "./App";
+import { createStore, applyMiddleware, compose } from "redux";
 import { Provider } from "react-redux";
-import { createStore } from "redux";
+import logger from 'redux-logger';
+import thunk from "redux-thunk";
+import App from "./App";
 import rootReducer from "./reducers";
-// needed dependancies
-// applyMiddleware from redux
-// thunk from redux-thunk
-// logger from redux-logger
-// rootReducer from ./reducers
 
+import "./index.css";
+
+const composeEnhancers =
+  typeof window === 'object' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+    ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
+
+    })
+    : compose;
+
+const enhancer = composeEnhancers(applyMiddleware(thunk, logger));
+
+// needed dependancies
+// applyMiddleware from redux DONE above
+// thunk from redux-thunk DONE above
+// logger from redux-logger  DONE below
+// rootReducer from ./reducers - already DONE?
+
+// const store = createStore(rootReducer, applyMiddleware(logger,thunk));
 const store = createStore(
-  rootReducer
-  /* applyMiddleware goes here */
+  rootReducer,
+  enhancer,
 );
 
 ReactDOM.render(
